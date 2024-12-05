@@ -1,0 +1,5 @@
+voice_pool/*
+.venv
+.idea
+**/*.wav
+__pycache__
