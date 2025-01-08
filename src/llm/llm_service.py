@@ -1,7 +1,8 @@
 import asyncio
 
 from ollama import ChatResponse, Message, AsyncClient
-from llm import run_ollama, list_models, check_model
+from .llm import run_ollama
+from .models import check_model, list_models
 
 
 class OllamaService:

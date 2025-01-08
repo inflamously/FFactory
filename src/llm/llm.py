@@ -1,8 +1,5 @@
 import subprocess
 
-import ollama
-
-
 class OllamaModelDetail:
     def __init__(self, detail):
         self.format = detail.format
@@ -19,19 +16,6 @@ class OllamaModelDescription:
 
     def __repr__(self):
         return "{}:{}:{}".format(self.name, self.details.parameter_size, self.details.format)
-
-
-def list_models() -> list[OllamaModelDescription]:
-    for key, models in ollama.list():
-        return [OllamaModelDescription(model) for model in models]
-    return []
-
-
-def check_model(model):
-    for model_description in list_models():
-        existing_model_name, version = model_description.name.split(":")
-        if model in existing_model_name: return True
-    return False
 
 
 def run_ollama():
