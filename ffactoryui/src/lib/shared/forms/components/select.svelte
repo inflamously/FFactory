@@ -10,8 +10,7 @@
 
 <select>
     {#each options as option}
-        <p>{option}</p>
-        <option value={option}>{option}</option>
+        <option value={option.key}>{option.value}</option>
     {/each}
 </select>
 
